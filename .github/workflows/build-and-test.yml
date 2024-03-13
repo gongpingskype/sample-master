@@ -17,8 +17,8 @@ jobs:
       - name: Download Maven
         run: |
           curl -sL https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip -o maven.zip
-          apt-get update
-          apt-get -y install unzip
+          sudo apt-get update
+          sudo apt-get -y install unzip
           unzip -d /usr/share maven.zip
           rm maven.zip
           ln -s /usr/share/apache-maven-3.9.6/bin/mvn /usr/bin/mvn
