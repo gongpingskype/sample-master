@@ -14,15 +14,15 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Download Maven
-        run: |
-          curl -sL https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip -o maven.zip
-          sudo apt-get update
-          sudo apt-get -y install unzip
-          unzip -d /usr/share maven.zip
-          rm maven.zip
-          sudo ln -sv /usr/share/apache-maven-3.9.6/bin/mvn /usr/bin/mvn
-          echo "M2_HOME=/usr/share/apache-maven-3.9.6" | tee -a /etc/environmen
+      # - name: Download Maven
+      #   run: |
+      #     curl -sL https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip -o maven.zip
+      #     sudo apt-get update
+      #     sudo apt-get -y install unzip
+      #     unzip -d /usr/share maven.zip
+      #     rm maven.zip
+      #     sudo ln -sv /usr/share/apache-maven-3.9.6/bin/mvn /usr/bin/mvn
+      #     echo "M2_HOME=/usr/share/apache-maven-3.9.6" | tee -a /etc/environmen
 
       - name: Test with Maven
         run: mvn test
